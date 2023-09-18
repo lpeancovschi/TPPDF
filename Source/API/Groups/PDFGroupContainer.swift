@@ -16,6 +16,21 @@ public enum PDFGroupContainer {
     case none
 
     /**
+     Container at the top left
+     */
+    case headerLeft
+
+    /**
+     Container at the top center
+     */
+    case headerCenter
+
+    /**
+     Container at the top right
+     */
+    case headerRight
+
+    /**
      Container aligned to left
      */
     case left
@@ -30,13 +45,43 @@ public enum PDFGroupContainer {
      */
     case right
 
+    /**
+     Container at the bottom left
+     */
+    case footerLeft
+
+    /**
+     Container at the bottom center
+     */
+    case footerCenter
+
+    /**
+     Container at the bottom right
+     */
+    case footerRight
+
     internal init(from container: PDFContainer) {
-        if container.isLeft {
+        switch container {
+        case .none:
+            self = .none
+        case .headerLeft:
+            self = .headerLeft
+        case .headerCenter:
+            self = .headerCenter
+        case .headerRight:
+            self = .headerRight
+        case .contentLeft:
             self = .left
-        } else if container.isRight {
-            self = .right
-        } else {
+        case .contentCenter:
             self = .center
+        case .contentRight:
+            self = .right
+        case .footerLeft:
+            self = .footerLeft
+        case .footerCenter:
+            self = .footerCenter
+        case .footerRight:
+            self = .footerRight
         }
     }
 
@@ -45,7 +90,7 @@ public enum PDFGroupContainer {
      Useful for initalizing default values for each container
      */
     internal static var all: [PDFGroupContainer] {
-        [.left, .center, .right]
+        [.headerLeft, .headerCenter, .headerRight, .left, .center, .right, .footerLeft, .footerCenter, .footerRight]
     }
 
     /**
@@ -53,10 +98,16 @@ public enum PDFGroupContainer {
      */
     internal var contentContainer: PDFContainer {
         switch self {
-        case .left: return PDFContainer.contentLeft
-        case .center: return PDFContainer.contentCenter
-        case .right: return PDFContainer.contentRight
-        default: return PDFContainer.none
+        case .headerLeft: return .headerLeft
+        case .headerCenter: return .headerCenter
+        case .headerRight: return .headerRight
+        case .left: return .contentLeft
+        case .center: return .contentCenter
+        case .right: return .contentRight
+        case .footerLeft: return .footerLeft
+        case .footerCenter: return .footerCenter
+        case .footerRight: return .footerRight
+        default: return .none
         }
     }
 }
