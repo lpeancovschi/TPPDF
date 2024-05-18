@@ -7,32 +7,28 @@
 //
 
 import CoreGraphics
-import Quick
 import Nimble
+import Quick
 @testable import TPPDF
 
 class PDFLineSeparatorObject_Spec: QuickSpec {
-
     override func spec() {
         describe("PDFLineSeparatorObject") {
-
             var separator: PDFLineSeparatorObject! = PDFLineSeparatorObject()
 
             context("variables") {
-
                 it("has a line style") {
                     expect(separator.style).toNot(beNil())
                 }
             }
 
-            context("initalizers") {
-
-                it("can be initalized without") {
+            context("initializers") {
+                it("can be initialized without") {
                     separator = PDFLineSeparatorObject()
                     expect(separator).toNot(beNil())
                 }
 
-                it("can be initalized with a line style") {
+                it("can be initialized with a line style") {
                     let style = PDFLineStyle(type: .dotted, color: .orange, width: 0.25)
 
                     separator = PDFLineSeparatorObject(style: style)
@@ -58,7 +54,6 @@ class PDFLineSeparatorObject_Spec: QuickSpec {
             }
 
             context("drawing") {
-
                 let document = PDFDocument(layout: PDFPageLayout(size: CGSize(width: 50, height: 50),
                                                                  margin: EdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
                                                                  space: (header: 5, footer: 5)))
@@ -91,7 +86,7 @@ class PDFLineSeparatorObject_Spec: QuickSpec {
 //                                    expected = separator.style.color.hex
 //                                }
 //                                // TODO: add pixel testing
-////                                expect(result).to(equal(expected), description: "Pixel at <\(x), \(y)> is expected to equal <\(expected)>, got <\(result)>")
+                    ////                                expect(result).to(equal(expected), description: "Pixel at <\(x), \(y)> is expected to equal <\(expected)>, got <\(result)>")
 //
 //                                // Early exit to only fail at first error!
 //                                if result != expected {

@@ -6,18 +6,14 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-
-import Quick
 import Nimble
+import Quick
 @testable import TPPDF
 
 class PDFTableStyle_Spec: QuickSpec {
-
     override func spec() {
         describe("PDFTableStyle") {
-
             context("variables") {
-
                 let style = PDFTableStyle()
 
                 it("has a row header count") {
@@ -57,9 +53,8 @@ class PDFTableStyle_Spec: QuickSpec {
                 }
             }
 
-            context("initalizer") {
-
-                it("can be initalized with default values") {
+            context("initializer") {
+                it("can be initialized with default values") {
                     let style = PDFTableStyle()
 
                     expect(style.rowHeaderCount) == 1
@@ -73,7 +68,7 @@ class PDFTableStyle_Spec: QuickSpec {
                     expect(style.alternatingContentStyle).to(beNil())
                 }
 
-                it("can be initalized with values") {
+                it("can be initialized with values") {
                     let rowHeaderCount = 4
                     let columnHeaderCount = 4
                     let footerCount = 4
@@ -168,5 +163,4 @@ class PDFTableStyle_Spec: QuickSpec {
             }
         }
     }
-
 }

@@ -7,15 +7,13 @@
 //
 
 import CoreGraphics
-import Quick
 import Nimble
+import Quick
 @testable import TPPDF
 
 class PDFLineStyle_Spec: QuickSpec {
-
     override func spec() {
         describe("Line Style") {
-
             var lineStyle: PDFLineStyle!
 
             let type = PDFLineType.dotted
@@ -26,14 +24,14 @@ class PDFLineStyle_Spec: QuickSpec {
                 lineStyle = PDFLineStyle()
             }
 
-            it("can be initalized with empty initalizer") {
+            it("can be initialized with empty initializer") {
                 lineStyle = PDFLineStyle()
                 expect(lineStyle.type) == PDFLineType.full
                 expect(lineStyle.color) == Color.black
                 expect(lineStyle.width) == 0.25
             }
 
-            it("can be initalized with values") {
+            it("can be initialized with values") {
                 lineStyle = PDFLineStyle(type: type, color: color, width: width)
                 expect(lineStyle.type) == type
                 expect(lineStyle.color) == color
@@ -41,7 +39,6 @@ class PDFLineStyle_Spec: QuickSpec {
             }
 
             context("variables") {
-
                 beforeEach {
                     lineStyle = PDFLineStyle(type: type, color: color, width: width)
                 }

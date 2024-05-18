@@ -5,61 +5,44 @@
 //  Created by Philip Niedertscheider on 31.05.19.
 //
 
-/**
- A section container defines the position of an element in a column of a given container.
- */
+/// A section container defines the position of an element in a column of a given container.
 public enum PDFGroupContainer {
-
-    /**
-     Element is in no container, only real use is as a default value
-     */
+    /// Element is in no container, only real use is as a default value
     case none
 
-    /**
-     Container at the top left
-     */
+    /// Container at the top left
     case headerLeft
 
-    /**
-     Container at the top center
-     */
+    /// Container at the top center
     case headerCenter
 
-    /**
-     Container at the top right
-     */
+    /// Container at the top right    
     case headerRight
 
-    /**
-     Container aligned to left
-     */
+    /// Container aligned to left
     case left
 
-    /**
-     Container aligned to center
-     */
+    /// Container aligned to center
     case center
 
-    /**
-     Container aligned to right
-     */
+    /// Container aligned to right
     case right
 
-    /**
-     Container at the bottom left
-     */
+    /// Container at the bottom left
     case footerLeft
 
-    /**
-     Container at the bottom center
-     */
+    /// Container at the bottom center
     case footerCenter
 
     /**
      Container at the bottom right
      */
     case footerRight
-
+    /**
+     * Convenience initializer to convert a ``PDFContainer`` into a ``PDFGroupContainer``
+     *
+     * - Parameter container: Container to convert
+     */
     internal init(from container: PDFContainer) {
         switch container {
         case .none:
@@ -86,17 +69,16 @@ public enum PDFGroupContainer {
     }
 
     /**
-     Array of all possible containers, expect `.none`.
-     Useful for initalizing default values for each container
+     * Array of all possible containers, expect `.none`.
+     *
+     * Useful for initializing default values for each container
      */
     internal static var all: [PDFGroupContainer] {
         [.headerLeft, .headerCenter, .headerRight, .left, .center, .right, .footerLeft, .footerCenter, .footerRight]
     }
 
-    /**
-     Returns the mapped `PDFContainer`
-     */
-    internal var contentContainer: PDFContainer {
+    /// Returns the mapped `PDFContainer`
+    var contentContainer: PDFContainer {
         switch self {
         case .headerLeft: return .headerLeft
         case .headerCenter: return .headerCenter

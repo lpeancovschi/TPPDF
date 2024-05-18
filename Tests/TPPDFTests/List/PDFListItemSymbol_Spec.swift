@@ -6,15 +6,13 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-import Quick
 import Nimble
+import Quick
 @testable import TPPDF
 
-class PDFListItemSymbol_Spec : QuickSpec {
-
+class PDFListItemSymbol_Spec: QuickSpec {
     override func spec() {
         describe("PDFListItemSymbol") {
-
             it("should have enum values") {
                 expect(PDFListItemSymbol.none).toNot(beNil())
                 expect(PDFListItemSymbol.inherit).toNot(beNil())
@@ -47,7 +45,7 @@ class PDFListItemSymbol_Spec : QuickSpec {
                 expect(PDFListItemSymbol.numbered(value: nil).rawValue) == "numbered|nil"
             }
 
-            it("can be initalized with raw value") {
+            it("can be initialized with raw value") {
                 expect(PDFListItemSymbol(rawValue: "none")?.rawValue) == PDFListItemSymbol.none.rawValue
                 expect(PDFListItemSymbol(rawValue: "inherit")?.rawValue) == PDFListItemSymbol.inherit.rawValue
                 expect(PDFListItemSymbol(rawValue: "dot")?.rawValue) == PDFListItemSymbol.dot.rawValue
@@ -64,5 +62,4 @@ class PDFListItemSymbol_Spec : QuickSpec {
             }
         }
     }
-
 }

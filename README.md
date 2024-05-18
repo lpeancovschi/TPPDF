@@ -15,21 +15,6 @@
 </div>
 
 <div align="center">
-	<a href="https://travis-ci.org/techprimate/TPPDF">
-		<img src="https://travis-ci.org/techprimate/TPPDF.svg?branch=main&style=flat-square" alt="Travis">
-	</a>
-    <a href="https://www.codacy.com/gh/techprimate/TPPDF/dashboard">
-        <img src="https://app.codacy.com/project/badge/Grade/1af1a59fe93f49ae942732e4d526067a"/>
-	</a>
-	<a href="https://codebeat.co/projects/github-com-techprimate-tppdf-main">
-		<img src="https://codebeat.co/badges/ea2a8d79-a50c-43ea-a05a-2ac57baf84de" alt="codebeat">
-	</a>
-	<a href="https://codecov.io/gh/techprimate/TPPDF">
-		<img src="https://img.shields.io/codecov/c/github/techprimate/TPPDF.svg?style=flat-square" alt="codecov">
-	</a>
-</div>
-
-<div align="center">
 	<img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=flat-square" alt="Swift Package Manager"/>
 	<img src="https://img.shields.io/cocoapods/v/TPPDF.svg?style=flat-square" alt="Cocoapods"/>
 	<img src="https://img.shields.io/badge/Carthage-compatible-blue.svg?style=flat-square" alt="Carthage"/>
@@ -74,7 +59,6 @@
 - [x] Tables with cell merging & automatic page breaking
 - [x] Hyperlinks in text
 - [x] Native progress tracking using `Foundation.Progress`
-- [ ] [Documentation](https://techprimate.github.io/TPPDF)
 
 ## Getting Started
 
@@ -117,7 +101,7 @@ This is mainly for custom or high-priority requests, therefore we won't publish 
 
 For everything else, please see [Communication](#communication) and [this message](https://github.com/techprimate/TPPDF/issues/250). Thank you!
 
-- ~~If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/tppdf). (Tag 'TPPDF')~~ Just open up another issue, it might lead to better documentation.
+- If you **need help**, open an [issue](https://github.com/techprimate/TPPDF/issues/new?template=bug_report.md).
 - If you **found a bug**, open an [issue](https://github.com/techprimate/TPPDF/issues/new?template=bug_report.md).
 - If you **have a feature request**, open an [issue](https://github.com/techprimate/TPPDF/issues/new?template=feature_request.md).
 - If you **want to contribute**, submit a [pull request](https://github.com/techprimate/TPPDF/compare).
@@ -126,14 +110,13 @@ For everything else, please see [Communication](#communication) and [this messag
 
 Take a look at the [Getting Started Guide](https://github.com/techprimate/TPPDF/blob/main/Documentation/Usage.md#getting-started) or checkout the Examples (using of one of the following):
 
-- Clone the repository and look at the Example folders
-- Run `pod try TPPDF`
+- Clone the repository and open the `Examples.xcworkspace`
+- Run the `Example macOS (SPM)` or `Example macOS (iOS)`
 
 ## Apps using TPPDF
 
 If you are using TPPDF in your app and want to be listed here, simply create a pull request or let us know on Twitter or via GitHub. We are always curious to see, who is using our project :)
 
-<img src="https://raw.githubusercontent.com/techprimate/tppdf/main/resources/apps/EnergyTracker.jpg" alt="Energy Tracker"/>
 <table>
   <tr>
     <td align="center">
@@ -161,6 +144,11 @@ If you are using TPPDF in your app and want to be listed here, simply create a p
         <img src="https://raw.githubusercontent.com/techprimate/tppdf/main/resources/apps/EnergyTracker.jpg" alt="EnergyTracker"/>
       </a>
     </td>
+  	<td align="center">
+      <a href="https://apps.apple.com/us/app/lyrcs/id1599888045">
+        <img src="https://raw.githubusercontent.com/techprimate/tppdf/main/resources/apps/Lyrcs.svg" alt="Lyrcs" height=120 />
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -183,12 +171,16 @@ If you are using TPPDF in your app and want to be listed here, simply create a p
       <a href="https://itunes.apple.com/de/app/energy-tracker/id1193010972">EnergyTracker</a><br>
       by Stefan Nebel
     </td>
+    <td align="center">
+      <a href="https://apps.apple.com/us/app/lyrcs/id1599888045">Lyrcs</a><br>
+      by ptrkstr
+    </td>
   </tr>
 </table>
 
 ## Credits
 
-TPPDF is created and maintained by Philip Niedertscheider, founder of [techprimate](https://www.github.com/techprimate).
+TPPDF is created and maintained by Philip Niedertscheider, co-founder of [techprimate](https://www.github.com/techprimate).
 
 <p align="center">
 	<a href="https://www.techprimate.com">
@@ -196,12 +188,6 @@ TPPDF is created and maintained by Philip Niedertscheider, founder of [techprima
 	</a>
 	<a href="http://twitter.com/techprimate">
 	    <img src="https://img.shields.io/badge/twitter-@techprimate-blue.svg?style=flat-square" alt="twitter">
-	</a>
-	<a href="https://instagram.com/techprimate">
-		<img src="https://img.shields.io/badge/instagram-@techprimate-c13584.svg?style=flat-square" alt="facebook">
-	</a>
-	<a href="https://facebook.com/techprimate">
-		<img src="https://img.shields.io/badge/facebook-@techprimate-blue.svg?style=flat-square" alt="facebook">
 	</a>
 </p>
 
