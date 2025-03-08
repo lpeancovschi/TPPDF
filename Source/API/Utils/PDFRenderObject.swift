@@ -5,7 +5,7 @@
 //  Created by Philip Niedertscheider on 12/08/2017.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import UIKit
 #elseif os(macOS)
     import AppKit
@@ -22,6 +22,11 @@ public class PDFRenderObject: CustomStringConvertible {
 
     ///  Attributes set for this object, and their calculated frame
     var attributes: [(attribute: PDFObjectAttribute, frame: CGRect)] = []
+    
+    init(frame: CGRect = .null, attributes: [(attribute: PDFObjectAttribute, frame: CGRect)] = []) {
+        self.frame = frame
+        self.attributes = attributes
+    }
 
     /**
      * Calculates the object and returns all calculated objects which are created by this calculated.

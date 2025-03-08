@@ -5,7 +5,7 @@
 //  Created by Philip Niedertscheider on 12.08.19.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import UIKit
 #elseif os(macOS)
     import AppKit
@@ -21,7 +21,7 @@ class PDFExternalPageObject: PDFRenderObject {
     override func calculate(generator _: PDFGenerator, container: PDFContainer) throws -> [PDFLocatedRenderObject] {
         frame = page.getBoxRect(.mediaBox)
         return [
-            (container, self)
+            (container, self),
         ]
     }
 

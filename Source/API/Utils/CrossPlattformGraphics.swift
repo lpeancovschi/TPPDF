@@ -6,7 +6,7 @@
 //  Created by Philip Niedertscheider on 19.05.20.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import UIKit
 
     /// Cross-plattform type for `UIColor` and `NSColor`
@@ -66,7 +66,7 @@
         }
     }
 
-    extension NSEdgeInsets: Equatable {
+    extension NSEdgeInsets: @retroactive Equatable {
         public static func == (lhs: NSEdgeInsets, rhs: NSEdgeInsets) -> Bool {
             lhs.top == rhs.top && lhs.left == rhs.left && lhs.bottom == rhs.bottom && lhs.right == rhs.right
         }

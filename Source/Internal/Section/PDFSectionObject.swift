@@ -5,7 +5,7 @@
 //  Created by Marco Betschart on 05.05.18.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import UIKit
 #elseif os(macOS)
     import AppKit
@@ -122,7 +122,7 @@ class PDFSectionObject: PDFRenderObject {
         // stores how many objects are in one column at max
         let maxObjectsPerColumn = objectsPerColumn.reduce(0) { max($0, $1.value.count) }
 
-        /* 
+        /*
          * as soon as a column requests a page break, we need to stack subsequent objects of the very same column until the following is `true`:
          * one or more columns do not have more objects and all other columns, which have more objects left, are requesting a page break
          */
@@ -167,8 +167,7 @@ class PDFSectionObject: PDFRenderObject {
                         continue
                     }
                     let frame = CGRect(x: met.minX, y: sectionMinY, width: met.width, height: sectionMaxY - sectionMinY)
-                    let rect = PDFRectangleObject(lineStyle: .none, size: frame.size, fillColor: backgroundColor)
-                    rect.frame = frame
+                    let rect = PDFRectangleObject(lineStyle: .none, frame: frame, fillColor: backgroundColor)
                     result += [(container, rect)] + columnObjects
                 }
             }

@@ -5,7 +5,7 @@
 //  Created by Philip Niedertscheider on 12/08/2017.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import UIKit
 #elseif os(macOS)
     import AppKit
@@ -287,7 +287,7 @@ class PDFAttributedTextObject: PDFRenderObject {
         return [
             NSAttributedString.Key.font: style?.font ?? fonts[container]!,
             NSAttributedString.Key.foregroundColor: style?.color ?? textColor[container]!,
-            NSAttributedString.Key.paragraphStyle: paragraphStyle
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
         ]
     }
 
