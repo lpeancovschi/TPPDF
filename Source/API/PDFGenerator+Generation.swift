@@ -365,6 +365,15 @@ public extension PDFGenerator {
             if let color = document.background.color {
                 PDFGraphics.drawRect(in: context, rect: document.layout.bounds, outline: .none, fill: color)
             }
+            if let leftSideColor = document.background.leftSideColor {
+                PDFGraphics.drawRect(in: context,
+                                     rect: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: CGFloat(document.background.leftSideWidthFactor) * document.layout.bounds.size.width,
+                                                  height: document.layout.bounds.size.height),
+                                     outline: .none,
+                                     fill: leftSideColor)
+            }
             drawDebugPageOverlay(in: context)
         }
 

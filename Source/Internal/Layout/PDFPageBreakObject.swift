@@ -72,6 +72,15 @@ class PDFPageBreakObject: PDFRenderObject {
             if let color = generator.document.background.color {
                 PDFGraphics.drawRect(in: context, rect: generator.document.layout.bounds, outline: .none, fill: color)
             }
+            if let leftSideColor = generator.document.background.leftSideColor {
+                PDFGraphics.drawRect(in: context,
+                                     rect: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: CGFloat(generator.document.background.leftSideWidthFactor) * generator.document.layout.bounds.size.width,
+                                                  height: generator.document.layout.bounds.size.height),
+                                     outline: .none,
+                                     fill: leftSideColor)
+            }
             generator.drawDebugPageOverlay(in: context)
         }
         applyAttributes(in: context)
