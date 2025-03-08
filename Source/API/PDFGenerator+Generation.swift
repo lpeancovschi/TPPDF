@@ -374,6 +374,15 @@ public extension PDFGenerator {
                                      outline: .none,
                                      fill: leftSideColor)
             }
+            if let firstPageHeaderColor = document.background.firstPageHeaderColor {
+                PDFGraphics.drawRect(in: context,
+                                     rect: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: document.layout.bounds.size.width,
+                                                  height: CGFloat(document.background.firstPageHeaderFactor) * document.layout.bounds.size.height),
+                                     outline: .none,
+                                     fill: firstPageHeaderColor)
+            }
             drawDebugPageOverlay(in: context)
         }
 

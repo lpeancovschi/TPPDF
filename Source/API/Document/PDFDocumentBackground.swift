@@ -20,4 +20,18 @@ public struct PDFDocumentBackground {
      * Defaults to `0`
      */
     public var leftSideWidthFactor: Float = 0
+    
+    /**
+     * Color used to fill the a portion of the header on the first page. Width is defined by `leftSideWidth`
+     *
+     * Defaults to `nil`, which results in a transparent background
+     */
+    public var firstPageHeaderColor: Color?
+    
+    /**
+     * Height factor of the header of the first page that will be filled with `firstPageHeaderColor`
+     *
+     * Defaults to `0`
+     */
+    public var firstPageHeaderFactor: Float = 0
 }
