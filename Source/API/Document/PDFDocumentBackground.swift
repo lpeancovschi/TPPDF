@@ -22,6 +22,13 @@ public struct PDFDocumentBackground {
     public var leftSideWidthFactor: Float = 0
     
     /**
+     * Offset factor from the left side of the page that will not be filled with `leftSideColor`
+     *
+     * Defaults to `0`
+     */
+    public var leftSideOffsetFactor: Float = 0
+    
+    /**
      * Color used to fill the a portion of the header on the first page. Width is defined by `leftSideWidth`
      *
      * Defaults to `nil`, which results in a transparent background

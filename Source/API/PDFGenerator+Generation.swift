@@ -367,7 +367,7 @@ public extension PDFGenerator {
             }
             if let leftSideColor = document.background.leftSideColor {
                 PDFGraphics.drawRect(in: context,
-                                     rect: CGRect(x: 0,
+                                     rect: CGRect(x: CGFloat(document.background.leftSideOffsetFactor) * document.layout.bounds.size.width,
                                                   y: 0,
                                                   width: CGFloat(document.background.leftSideWidthFactor) * document.layout.bounds.size.width,
                                                   height: document.layout.bounds.size.height),

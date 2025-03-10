@@ -74,7 +74,7 @@ class PDFPageBreakObject: PDFRenderObject {
             }
             if let leftSideColor = generator.document.background.leftSideColor {
                 PDFGraphics.drawRect(in: context,
-                                     rect: CGRect(x: 0,
+                                     rect: CGRect(x: CGFloat(generator.document.background.leftSideOffsetFactor) * generator.document.layout.bounds.size.width,
                                                   y: 0,
                                                   width: CGFloat(generator.document.background.leftSideWidthFactor) * generator.document.layout.bounds.size.width,
                                                   height: generator.document.layout.bounds.size.height),
