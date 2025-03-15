@@ -180,8 +180,13 @@ class PDFSectionObject: PDFRenderObject {
 
             // do all columns requesting a page break or if not, do they not contain any further objects?
             let isPageBreakAllowed = objectsPerColumn.keys.allSatisfy { columnIndex in
+                // changed the condition here to fix a bug:
+                // 1. create a section with 3 columns: [0.3, 0, 0.7]
+                // 2. on column 1 have more components than on col 3, but make sure all components of column 1 fit in 1 page
+                // 3. column 3 components should expand to page 2
+                // Issue: in this case page 2 is not rendered
                 stackedObjectsPerColumn[columnIndex]?.first?.1 is PDFPageBreakObject ||
-                    (objectsPerColumn[columnIndex]?.count ?? 0) < objectIndex
+                    (objectsPerColumn[columnIndex]?.count ?? 0) <= objectIndex + 1
             }
             guard isPageBreakAllowed else { continue }
 
